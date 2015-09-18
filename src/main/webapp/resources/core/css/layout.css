@@ -1,0 +1,98 @@
+/* Reset */  
+ h1, h2, h3, h4, h5, h6, img, ul, li, table, p, hr { border:0px; margin:0px; padding:0px; }
+
+/*----Layout Styles----*/
+html, body { color:#2F2F2F; font-size: 14px; font-family: Arial, Helvetica, sans-serif; height:100%; margin:0px; padding:0px; }
+.main-container{ border: 0px solid; min-height: 100%; position: relative; width:100%; }
+.header-padding{ padding: 8px 2% 4px 2%; }
+.sub-header{ background-color: #48B1E0; height:55px; border-top:3px solid #FBE214; color: #FBE214; text-align: center; font-size: 35px; line-height: 55px; }
+.content{width:100%; min-height:500px; padding-bottom:40px; background-color:#F5F5F5; }
+.footer{ position:absolute; bottom:0px; width:90%; padding:0px 5%; height:30px; line-height:30px; background-color:#DDDDDD; box-shadow: 0px 1px 6px #B5B6B6 inset;}
+.content-padding { padding: 0px 2%; }
+
+/*----Common Styles----*/
+.dir-left { float:left; }
+.dir-right { float:right; }
+.clear { clear:both; }
+.ele-padding { padding:10px 15px; }
+.padding-top { padding-top:5px; }
+.padding-bottom { padding-bottom:5px; }
+.padding-left { padding-left:10px; }
+.padding-right { padding-right:10px; }
+.padding-top-big { padding-top:15px; }
+.ele-margin { margin:15px; }
+.ele-divider { border-bottom: 1px dashed #9B9B9B; }
+.ele-hide { display:none; }
+.full-width { width:100%; }
+
+.left-block { width:23%; background-color:#E2E2E2; margin-right:2%; min-height: 450px; }
+.left-block-listitem div:hover { cursor:pointer; color:#48B1E0; }
+.right-block { width:75%; }
+.form-label { width:25%; line-height: 27px; }
+.form-input { width:35%; border:1px solid #B1B1B1; text-indent: 5px; height: 23px;}
+.form-dropdown { height: 26px; width: 35.3%; }
+.form-textarea { width:99.2%; height: 200px; }
+.form-btn { background-color:#F4800C; color:#ffffff; font-size: 15px; padding:8px 20px; margin-left:15px; text-decoration: none;}
+.form-btn:hover { background-color:#CF6E0C; cursor:pointer; }
+.tab-block { font-size: 0px; background-color:#48B1E0; }
+.tab-btn { border-top: 4px solid #48B1E0; border-right: 1px solid #ffffff; list-style-type: none; display: inline-block;
+           color: #ffffff; font-size: 15px; text-align: center; line-height: 35px; width: 24.5%; }
+.tab-btn:hover { background-color:#F4800C; border-top: 4px solid #F4800C; color:#ffffff; cursor:pointer; }
+.tab-btn-active { background-color: #ffffff; color:#48B1E0; }
+.tab-content { border: 1px solid #48B1E0; border-top:0px solid transparent; position:relative;}
+.tab-footer { background-color: #E2E2E2; margin-top:15px; }
+.meeting-table { width: 100%; text-align: left; border-spacing: 1px;}
+.meeting-table th, .meeting-table td { padding:8px; }
+.meeting-table th { background-color: #8A8A8A; color: #ffffff; font-weight: normal; line-height:22px; font-size: 15px;}
+.meeting-table tr:nth-child(odd) { background-color: #D9D9D9; }
+.meeting-table tr:nth-child(even) { background-color: #F7F7F7; }
+.edit-delete-btns { height:18px; width:18px; cursor:pointer; }
+.edit-btn { background: url(./images/edit-icon.png) no-repeat left center; padding-right: 20px; border-right: 1px solid #8A8A8A; }
+.download-btn { background: url(./images/download_icon.png) no-repeat left center; margin-left: 10px; border: 1px solid #F4800C;}
+.edit-btn:hover { background: url(./images/edit-icon-hover.png) no-repeat left center; }
+.delete-btn { background: url(./images/delete-icon.png) no-repeat right center; padding-left: 20px; }
+.delete-btn:hover { background: url(./images/delete-icon-hover.png) no-repeat right center; }
+
+
+
+.filetype-dropdown {
+    height: 22px;
+    width: 10%;
+    margin:0px 10px 0px 0px;
+}
+.editMetting_wrap{
+	 border: 1px solid #48B1E0;
+      position: relative;
+
+}
+.meeting_table{
+	width:70%;
+}
+.meeting_input{width:75%;}
+
+.meeting-btn {
+    background-color: #F4800C;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+.metting_Heading{
+	
+	text-decoration: underline;
+	
+}
+
+
+/*----Customersel Styles----*/
+
+#addCust{width: 120px; display: block;}
+#custSel{width: 60%}
+.addcust_linkcontainer {
+	width:28%; float:left; text-align:center;
+	
+}
+.pros_dropdwn{border: 0px; width: 58%;float: right;}
+.pros_dropdwnheading{width: 75%; font-size:20px; text-align:center;}
+.pros_wrap{padding-top: 55px;}
+.pros_label{width: 20%; font-size: 20px;}
