@@ -15,6 +15,7 @@ public class EmailController {
 	@Autowired
 	CustomerService customerService;
 	
+	/*
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 
@@ -23,6 +24,7 @@ public class EmailController {
 		return "hello";
 
 	}
+	*/
 
 	@RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView hello(@PathVariable("name") String name) {

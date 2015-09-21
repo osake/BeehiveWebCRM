@@ -71,7 +71,13 @@ public class DataCustomerController {
     
     @RequestMapping(value = "/customersel", method = RequestMethod.GET)
 	public ModelAndView handleCustomerSelView(HttpServletRequest req, HttpSession session) {
+    	   	
     	ModelAndView modelAndView = new ModelAndView();
+    	if (!validateUser(req)) {
+    		modelAndView = new ModelAndView("userRegister");
+    		return modelAndView;
+    	}
+    	
     	try {    		
 		List<Customer> custList = customerService.findAllCustomers();
     		List<Customer> uniqueCustList = new ArrayList<Customer>();
@@ -110,6 +116,8 @@ public class DataCustomerController {
 	}*/
 	
 	private void createCustomerModelView (ModelAndView modelAndView, Customer customer) {
+		
+		System.out.println("****************DataCustomerController: createCustomerModelView() enter******************");
 	
 		List<Lov> primarySalesLead = null;
 		List<Lov> OPENMINDSME = null;
@@ -239,6 +247,7 @@ public class DataCustomerController {
 		modelAndView.addObject("meetingListContainer",customerService.findByMeetings(customer));
 		System.out.println("Meeting list with flag: " + customerService.findByMeetings(customer));
 		//modelAndView.addObject("meetingListContainer", customer.getMeetingList());
+		System.out.println("****************DataCustomerController: createCustomerModelView() exit******************");
 
 
 	}
@@ -471,7 +480,7 @@ public class DataCustomerController {
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.GET)
 	// pass customer and save it to DB
 	public ModelAndView addCustomer() {
-
+		
 			Customer newCust = new Customer();
 			
 //starts of list
@@ -1052,5 +1061,50 @@ public class DataCustomerController {
 		return modelAndView;*/
 
 	}
+	
+	
+	@RequestMapping(value = "/beehivecrm", method = RequestMethod.GET)
+	// register user in session
+	public String registerUser(HttpServletRequest request) {
+		//ModelAndView modelAndView = new ModelAndView();
+		
+		return "redirect:/Register.jsp";
+
+	}
+	
+		@RequestMapping(value = "/beehivecrm", method = RequestMethod.POST)
+		// register user in session
+		public String registerUser(HttpServletRequest request, HttpServletResponse response) {
+			HttpSession session = request.getSession(true);
+			String user = request.getParameter("user");
+	        System.out.println("LoginServlet: doPost(): user= "+user);
+            session.setAttribute("user", user);
+			String redirect = new String();
+			
+			if (validateUser(request)) {
+				redirect = "redirect:/customersel";
+			} else {
+				redirect =  "redirect:/Register.jsp";
+			}
+				
+			//return "redirect:/cust/" + custId + "?data=1&mflag=1";
+			return redirect;
+
+		}
+		
+		@RequestMapping(value = "/authuser")
+		public Boolean validateUser(HttpServletRequest request) {
+			final String userID = "admin";
+	    	HttpSession session = request.getSession(false);
+	    	String user = (String)session.getAttribute("user");
+	    	System.out.println("DataCustomerController: validateUser(): user= "+user);
+	    	
+	    	if (user != null && userID.equals(user)) {
+	    		return true;
+	    	}
+	    	return false;
+	    	
+	    }
+	
 
 }
